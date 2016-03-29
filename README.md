@@ -1,3 +1,12 @@
+# TABLEFLIP static site template
+
+1. Clone this project.
+2. Find-and-replace [REPO_NAME] with the name of your repo.
+3. Find-and-replace [PROD_URL] with the production URL.
+4. Delete this section from the README.
+
+************************
+
 # [REPO_NAME]
 
 The life and works of [REPO_NAME]
