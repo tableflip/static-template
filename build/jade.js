@@ -18,17 +18,19 @@ find.file(/\index.jade$/, inputDir, (files) => {
   var tasks = files.map((tpl) => {
     var name = path.dirname(path.relative(inputDir, tpl))
     return {
-      name: name,
       input: tpl,
       output: path.join(outputDir, name, 'index.html'),
       content: path.join(path.dirname(tpl), 'content.json'),
-      meta: { relativePathToRoot: '..' }
+      meta: {
+        name: name,
+        relativePathToRoot: '..'
+      }
     }
   })
 
   // shift output of home
   tasks
-    .filter((task) => task.name === 'home')
+    .filter((task) => task.meta.name === 'home')
     .forEach((task) => {
       task.output = path.join(outputDir, 'index.html')
       task.meta.relativePathToRoot = '.'
